@@ -1,0 +1,11 @@
+{
+  "name": "weather-notification-bot",
+  "private": true,
+  "scripts": {
+    "start": "python src/main.py",
+    "test": "python -m unittest discover tests"
+  },
+  "dependencies": {
+    "sqlite3": "^5.1.6"
+  }
+}
