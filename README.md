@@ -1,118 +1,136 @@
 # Weather Notification Bot
 
-Weather Notification Bot is a Python application that fetches weather data for a given location and sends notifications to users via Twilio. The application uses a scheduler to periodically check for users who need to be notified based on their preferred notification time.
+Overview
+
+The Personalized Weather and Notification Bot is a multi-functional application designed to provide users with real-time weather updates and custom notifications. It integrates seamlessly with external APIs to fetch weather data and deliver personalized notifications via preferred communication channels.
+
+This project is structured to utilize both Python and Node.js for robust and scalable development.
+# Features
+
+- Real-time Weather Updates: Retrieves current weather conditions and forecasts for specified locations.
+
+- Custom Notifications: Sends personalized alerts based on user-defined triggers (e.g., severe weather conditions).
+
+- Multi-Platform Support: Delivers notifications via email, SMS, or messaging apps.
+
+- Extensibility: Modular design allows easy integration with additional APIs and services.
+
+# Tech Stack
+
+## Backend
+- **Python**: Used for weather data processing and API integration.
+- **Node.js**: Handles notification delivery and real-time communication.
+
+## Frameworks and Libraries
+- **Flask**: A lightweight Python web framework for API development.
+- **Bolt.js**: A Node.js framework for building Slack apps.
+
+## APIs
+- **OpenWeatherMap**: Provides weather data for processing and notifications.
+- **Twilio**: Enables SMS notifications to users.
+- **Slack API**: Facilitates integration with the Slack messaging platform.
+
+## Database
+- **SQLite**: Used for storing user data and preferences.
+
+## Testing
+- **Pytest**: Python testing framework for unit and integration testing.
+- **Mocha/Chai**: JavaScript testing frameworks for backend testing.
+
+# Installation
+
+## Prerequisites
+
+Before proceeding with the installation, ensure you have the following:
+
+- **Python 3.9+**: Required for backend development and weather data processing.
+- **Node.js 14+**: Required for notification delivery and real-time communication.
+- **npm (Node Package Manager)**: Used for managing Node.js dependencies.
+- **Virtual Environment** (optional but recommended): Helps to isolate Python dependencies.
+
+# Steps
+
+## 1. Clone the Repository
+```bash
+git clone https://github.com/your-repo/personalized-weather-bot.git
+cd personalized-weather-bot
+```
+## 2. Install Python Dependencies
+```bash
+python3 -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+pip install -r requirements.txt
+```
+## 3. Install Python Dependencies
+```bash
+npm install
+```
+## 4. Install Node.js Dependencies
+- Rename .env.example to .env.
+- Add API keys and other configuration values.
+## 5. Set Up Environment Variables
+```bash
+python src/app.py
+```
+## 6. Run the application 
+```bash
+npm run start
+```
+
+# Usage
+
+1. Open the application in your browser:  
+   **Default URL**: [http://localhost:5000](http://localhost:5000)
+
+2. Configure user preferences:  
+   - Set up weather updates and notification settings.
+
+3. Subscribe to alerts:  
+   - View the weather dashboard and receive notifications.
+# Testing
+
+## Python Tests
+To run the Python tests, use the following command:
+```bash
+pytest
+```
+# Node.js Tests
+
+Run the Node.js tests with Mocha:
+
+```bash
+npm test
+```
 
 ## Project Structure
 
 ```
-.APIWeatherApp/
-	config.json
-.gitignore
-config.json
-index.js
-package.json
-requirements.txt
-src/
-	database/
-		__pycache__/
-		db_manager.py
-	main.py
-	scheduler/
-		task_scheduler.py
-	services/
-		notification_service.py
-		weather_service.py
-	utils/
-		config.py
-tests/
-	test_weather_service.py
+Personalized Weather and Notification Bot
+├── src
+│   ├── app.py               # Python backend entry point
+│   ├── weather_service.py   # Weather API integration
+│   ├── notification_service.py # Notification logic
+│   └── templates            # Frontend templates (if applicable)
+│
+├── tests
+│   ├── test_weather.py      # Python tests
+│   └── test_notifications.js # Node.js tests
+│
+├── package.json             # Node.js project metadata
+├── requirements.txt         # Python dependencies
+├── README.md                # Project documentation
+└── .env.example             # Example environment configuration
 ```
+# Contribution Guidelines
 
-## Installation
+1. **Fork the repository**:  
+   Start by creating a fork of the repository to your GitHub account.
 
-1. Clone the repository:
-    ```sh
-    git clone https://github.com/yourusername/weather-notification-bot.git
-    cd weather-notification-bot
-    ```
-
-2. Create a virtual environment and activate it:
-    ```sh
-    python -m venv venv
-    source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
-    ```
-
-3. Install the required dependencies:
-    ```sh
-    pip install -r requirements.txt
-    ```
-
-4. Create and configure 
-
-config.json
-
-:
-    ```json
-    {
-        "weather_api_key": "YOUR_OPENWEATHER_API_KEY",
-        "twilio_account_sid": "YOUR_TWILIO_ACCOUNT_SID",
-        "twilio_auth_token": "YOUR_TWILIO_AUTH_TOKEN"
-    }
-    ```
-
-## Usage
-
-1. Initialize the database:
-    ```sh
-    python src/main.py
-    ```
-
-2. Start the application:
-    ```sh
-    npm start
-    ```
-
-## Running Tests
-
-To run the tests, use the following command:
-```sh
-npm test
-```
-
-## Project Components
-
-### Main Application
-
-- **src/main.py**: Entry point of the application. Initializes services and starts the scheduler.
-
-### Services
-
-- **src/services/weather_service.py**: Fetches weather data from the OpenWeatherMap API.
-- **src/services/notification_service.py**: Sends notifications to users via Twilio.
-
-### Scheduler
-
-- **src/scheduler/task_scheduler.py**: Periodically checks for users who need to be notified and processes notifications.
-
-### Database
-
-- **src/database/db_manager.py**: Manages database operations, including adding users and logging alerts.
-
-### Utilities
-
-- **src/utils/config.py**: Loads configuration from 
-
-config.json
-
-.
-
-### Tests
-
-- **tests/test_weather_service.py**: Unit tests for the 
-
-WeatherService
-
- class.
+2. **Create a feature branch**:  
+   Create a new branch for your feature or bug fix.
+   ```bash
+   git checkout -b feature-name
+	```
 
 ## License
 
@@ -127,4 +145,3 @@ Contributions are welcome! Please open an issue or submit a pull request for any
 - [OpenWeatherMap](https://openweathermap.org/) for providing the weather API.
 - [Twilio](https://www.twilio.com/) for providing the SMS notification service.
 
-Similar code found with 1 license type
